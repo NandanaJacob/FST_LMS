@@ -16,9 +16,9 @@ public class Fixtures extends BaseClass{
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 	
-//	@AfterAll
-//	public static void tearDown() {
-//		//close the browser
-//		driver.quit();
-//	}
+	@AfterAll
+	public static void tearDown() {
+		//close the browser
+		driver.quit();
+	}
 }
