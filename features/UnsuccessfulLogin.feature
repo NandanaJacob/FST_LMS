@@ -14,5 +14,6 @@ Feature: Unsuccessful Login
     	Then Failed-Login message is visible
     	
 Examples:
+ | username | password |
  | 1R00T | Passwords |
  | Root1 | password1 |
