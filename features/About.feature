@@ -1,6 +1,6 @@
 @about
 Feature:Testing About page
-	Scenario:Verify Our Story
+	Scenario:Verify Our Story, instructors section, testimonials section and the 'Start Learning' button
 	Given the user is on the Homepage
 	When user clicks on About
 	Then Our Story is visible
