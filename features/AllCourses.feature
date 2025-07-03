@@ -1,7 +1,7 @@
 @allCourses
 Feature: Testing All Courses page
 	
-	Scenario: Verify Number of Courses
+	Scenario: Verify Number of Courses, heading, testimonials and 'Start Learning' button
 	  Given the user is on the Homepage
 	  When user clicks on All Courses
 	  Then Verify the number of courses visible
