@@ -3,8 +3,8 @@ Feature: Testing Email Marketing Strategies Course
 
 	Scenario: Completing a lesson
 	  Given user is logged in
-	  And the user is on the All Courses page
-	  When user clicks on "See More" button under Email Marketing Strategies
+	  When the user clicks on the All Courses page
+	  And user clicks on "See More" button under Email Marketing Strategies
 	  Then course content is visible
 	  When user clicks on first lesson
 	  Then first lesson heading and content is visible

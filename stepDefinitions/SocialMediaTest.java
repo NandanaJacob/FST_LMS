@@ -17,7 +17,7 @@ public class SocialMediaTest extends BaseClass{
 //		driver.get("https://alchemy.hguy.co/lms/all-courses/");
 //	}
 	
-	@When("user clicks on \"See More\" button under Social Media Marketing")
+	@And("user clicks on \"See More\" button under Social Media Marketing")
 	public void clickSeeMoreSocial() {
 		driver.findElement(By.linkText("See more...")).click();
 	}

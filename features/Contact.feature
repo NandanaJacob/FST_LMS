@@ -3,7 +3,7 @@ Feature: Activity to test the Contact feature
 
   	Scenario: Verifying contact elements
     	Given user is on the Contact page
-    	When they scroll down
+    	# When they scroll down
     	Then "Send us a message" is visible
     	
   	Scenario: Successful message sent

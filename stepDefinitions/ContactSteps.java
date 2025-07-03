@@ -15,11 +15,7 @@ public class ContactSteps extends BaseClass{
 	public void openContactPage() {
 		driver.get("https://alchemy.hguy.co/lms/contact/");
 	}
-	@When("they scroll down")
-	public void scrollToContactForm() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, 500);");
-	}
+	
 	
 	@Then("\"Send us a message\" is visible")
 	public void verifyHeadingVisible() {

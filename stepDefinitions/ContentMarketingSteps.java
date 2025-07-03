@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 import io.cucumber.java.en.And;
 
 public class ContentMarketingSteps extends BaseClass{
-	@When("user clicks on See More button under Content Marketing")
+	@And("user clicks on See More button under Content Marketing")
 	public void clickSeeMore() {
 		driver.findElement(By.linkText("See more...")).click();
 	}
@@ -24,7 +24,7 @@ public class ContentMarketingSteps extends BaseClass{
 		 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(
 			        By.xpath("//h2[contains(text(),'Course Content')]")));
 		
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Assertions.assertTrue(driver.findElement(By.partialLinkText("Effective Writing & Promoting Your Content")).isDisplayed());
 	}
 	
@@ -33,7 +33,7 @@ public class ContentMarketingSteps extends BaseClass{
 		 // Wait for link to be clickable
 	    WebElement lessonLink = wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Effective Writing & Promoting Your Content")));
 	    // Scroll to link to avoid overlays
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", lessonLink);
+	    //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", lessonLink);
 	    lessonLink.click();
 	}
 	

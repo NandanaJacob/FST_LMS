@@ -3,8 +3,8 @@ Feature: Testing Content Marketing Course
 
 	Scenario: Completing a course
 	  Given user is logged in
-	  And the user is on the All Courses page
-	  When user clicks on See More button under Content Marketing
+	  When the user clicks on the All Courses page
+	  And user clicks on See More button under Content Marketing
 	  Then Content Marketing course content is visible
 	  When user clicks on 'Effective Writing & Promoting Your Content' lesson
 	  Then Content Marketing first lesson heading and content is visible

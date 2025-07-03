@@ -22,15 +22,16 @@ public class EmailMarketingTest extends BaseClass{
 		driver.findElement(By.id("wp-submit")).click();
 	}
 	
-	@When("the user is on the All Courses page")
+	@When("the user clicks on the All Courses page")
 	public void openAllCoursesPage() {
-		driver.get("https://alchemy.hguy.co/lms/all-courses/");
+		//driver.get("https://alchemy.hguy.co/lms/all-courses/");
+		driver.findElement(By.linkText("All Courses")).click();
 		//verify title
 		System.out.println(driver.getTitle());
 		Assertions.assertEquals(driver.getTitle(), "All Courses – Alchemy LMS");
 	}
 	
-	@When("user clicks on \"See More\" button under Email Marketing Strategies")
+	@And("user clicks on \"See More\" button under Email Marketing Strategies")
 	public void clickSeeMore() {
 		driver.findElement(By.xpath("//h3[text()='Email Marketing Strategies']")).click();
 	}
@@ -43,7 +44,6 @@ public class EmailMarketingTest extends BaseClass{
 		 WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(
 			        By.xpath("//h2[contains(text(),'Course Content')]")));
 		 
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Assertions.assertTrue(driver.findElement(By.linkText("Deliverability Of Your Emails")).isDisplayed());
 	}
 	
@@ -51,9 +51,6 @@ public class EmailMarketingTest extends BaseClass{
 	public void clickFirstLesson() {	    
 		 // Wait for link to be clickable
 	    WebElement lessonLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Deliverability Of Your Emails")));
-
-	    // Scroll to link to avoid overlays
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", lessonLink);
 
 	    lessonLink.click();
 	}
