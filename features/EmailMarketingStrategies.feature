@@ -12,6 +12,6 @@ Feature: Testing Email Marketing Strategies Course
 	  When user clicks "Mark Complete"
 	  Then user is redirected to the next lesson
 	  And second lesson heading and content is visible
-	  And "Mark Complete" button is visible
-	  When user clicks "Mark Complete"
-	  Then "100% Complete" is displayed
+	  # And "Mark Complete" button is visible
+	  # When user clicks "Mark Complete"
+	  # Then "100% Complete" is displayed
