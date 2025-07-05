@@ -17,7 +17,7 @@ public class ContactSteps extends BaseClass{
 	}
 	
 	
-	@Then("\"Send us a message\" is visible")
+	@Then("'Send us a message' is visible")
 	public void verifyHeadingVisible() {
 		WebElement heading = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[contains(text(),'Send us a message')]")));
@@ -38,13 +38,13 @@ public class ContactSteps extends BaseClass{
 		WebElement message = driver.findElement(By.id("wpforms-8-field_2"));
 		message.sendKeys("This is a test message from Cucumber.");
 	}
-	@And("click the \"Send Message\" button")
+	@And("click the 'Send Message' button")
 	public void clickSendMessage() {
 		WebElement sendButton = driver.findElement(By.id("wpforms-submit-8"));
 		sendButton.click();
 	}
 	
-	@Then("\"Thanks for contacting us\" message is visible")
+	@Then("'Thanks for contacting us' message is visible")
 	public void verifyThankYouMessage() {
 		WebElement confirmation = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.id("wpforms-confirmation-8")));

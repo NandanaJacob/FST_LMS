@@ -17,11 +17,11 @@ public class AllCoursesSteps extends BaseClass{
 		driver.get("https://alchemy.hguy.co/lms/");
 //		assertEquals("All Courses – Alchemy LMS",driver.getTitle());
 	}
-	@When("user clicks on All Courses")
-	public void clickOnAllCourses() {
-		WebElement allCourses=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("All Courses")));
-		allCourses.click();
-	}
+//	@When("user clicks on All Courses")
+//	public void clickOnAllCourses() {
+//		WebElement allCourses=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("All Courses")));
+//		allCourses.click();
+//	}
 	@Then("Verify the number of courses visible")
 	public void verifyNoOfCourses() {
 		List<WebElement> courseList=driver.findElements(By.className("caption"));

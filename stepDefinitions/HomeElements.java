@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import io.cucumber.java.en.Then;
 
 public class HomeElements extends BaseClass{
-	@Then("the WebSite title should be 'Alchemy LMS – An LMS Application'")
-	public void verifyWebsiteTitle() {
-		assertEquals("Alchemy LMS – An LMS Application",driver.getTitle());
+	@Then("the page title should be {string}")
+	public void verifyWebsiteTitle(String pageTitle) {
+		assertEquals(pageTitle, driver.getTitle());
 	}
 	@Then("the WebSite heading should be 'Learn from Industry Experts'")
 	public void verifyWebsiteHeading() {

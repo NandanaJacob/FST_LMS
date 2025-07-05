@@ -11,11 +11,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class AboutSteps extends BaseClass{
-	@When("user clicks on About")
-	public void clickOnAbout() {
-		WebElement about=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("About")));
-		about.click();
-	}
+//	@When("user clicks on About")
+//	public void clickOnAbout() {
+//		WebElement about=wait.until(ExpectedConditions.elementToBeClickable(By.linkText("About")));
+//		about.click();
+//	}
 	@Then("Our Story is visible")
 	public void verifyOurStory() {
 		WebElement story=driver.findElement(By.xpath("//h2[contains(text(),'Our Story')]"));

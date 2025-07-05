@@ -1,7 +1,7 @@
 package stepDefinitions;
 
-import java.time.Duration;
 import org.junit.jupiter.api.Assertions;
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,8 +11,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class LMS_LoginUnsuccessful extends BaseClass{
+public class MyAccountSteps extends BaseClass{
 	WebElement loginButton;
+	WebElement usernameField;
+	WebElement passwordField;
+
 	// Navigate to My Account Page
 	@Given("the user is on the LMS homepage")
 	public void openHomePage() {
@@ -33,7 +36,9 @@ public class LMS_LoginUnsuccessful extends BaseClass{
 		// find login button and click
 		driver.findElement(By.linkText("Login")).click();
 	}
-	// Scenario: Unsuccessful login
+	
+	//unsuccessful login scenario
+	
 	@Given("user is able to view the Login Form")
 	public void ViewLoginPage() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -64,4 +69,24 @@ public class LMS_LoginUnsuccessful extends BaseClass{
 		// Assert the confirmation message
 		Assertions.assertEquals("Incorrect username or password. Please try again", message);
 	}
+	
+	//successful login scenario
+
+    @When("they enter the correct username and password")
+    public void enterCorrectCredentials() {
+    	usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user_login")));
+        passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("user_pass")));
+        usernameField.clear();
+        passwordField.clear();
+        usernameField.sendKeys("root");
+        passwordField.sendKeys("pa$$w0rd");
+    }
+
+    @Then("they are able to see their enrolled courses")
+    public void verifyEnrolledCourses() {
+        // Add a short wait for the page to load and for the heading to appear
+        WebElement enrolledCourses = wait.until(ExpectedConditions.visibilityOfElementLocated(
+            By.xpath("//h1[contains(text(),'My Account')]")));
+        Assertions.assertTrue(enrolledCourses.isDisplayed(), "Enrolled courses are not visible.");
+    }
 }
